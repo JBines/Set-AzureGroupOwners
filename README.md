@@ -1,15 +1,29 @@
 # Set-AzureGroupOwners
-This has been created with the primary goal of allowing scoped administrators to manage licence assignment via groups which have been enabled for group-based licensing. 
-
-.SYNOPSIS
 This script automates the population of members from one group as owners on another group.  
 
-.DESCRIPTION
-This has been created with the primary goal of allowing scoped administrators to manage licence assignment via groups which have been enabled for group-based licensing.  
+This has been created with the primary goal of allowing scoped administrators to manage licence assignment via groups which have been enabled for group-based licensing. 
 
-## Set-AzureGroupOwners [-OwnerSourceGroup <string[ObjectID]>] [-UserGroups <Array[ObjectID]>] 
+```powershell
+ Set-AzureGroupOwners -OwnerSourceGroup "<string[ObjectID]>" -UserGroups "<Array[ObjectID]>" -DifferentialScope "Int[Number]" -AutomationPSCredential "<string[Cred]>"
+```
 
-.PARAMETER OwnerSourceGroup
+### Notes
+This function requires that you have already created your Azure AD Groups.
+
+We used AzureADPreview Version: 2.0.2.5 ()
+
+Please note, when using Azure Automation with more than one user group the array should be set to JSON for example ['ObjectID','ObjectID']
+
+### Author
+Joshua Bines, Consultant
+
+Find me on:
+* Web:     https://theinformationstore.com.au
+* LinkedIn:  https://www.linkedin.com/in/joshua-bines-4451534
+* Github:    https://github.com/jbines
+
+```powershell
+.PARAMETER OwnerSourceGroup 
 The OwnerSourceGroup parameter details the ObjectId of the Azure Group which contains all the desired owners as members of one group.
 
 .PARAMETER UserGroups
@@ -65,4 +79,4 @@ Find me on:
 * Web:     https://theinformationstore.com.au
 * LinkedIn:  https://www.linkedin.com/in/joshua-bines-4451534
 * Github:    https://github.com/jbines
-
+```
