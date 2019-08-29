@@ -7,7 +7,18 @@ This has been created with the primary goal of allowing scoped administrators to
  Set-AzureGroupOwners -OwnerSourceGroup "<string[ObjectID]>" -UserGroups "<Array[ObjectID]>" -DifferentialScope "Int[Number]" -AutomationPSCredential "<string[Cred]>"
 ```
 
-### Notes
+### Examples 
+```powershell
+Set-AzureGroupOwners -OwnerSourceGroup '7b7c4926-c6d7-4ca8-9bbf-5965751022c2' -UserGroups '0e55190c-73ee-e811-80e9-005056a31be6'
+```
+In this example the script will add users (members of Group '7b7c4926-c6d7-4ca8-9bbf-5965751022c2') as owners to group '0e55190c-73ee-e811-80e9-005056a31be6'
+
+```powershell
+Set-AzureGroupOwners -OwnerSourceGroup '7b7c4926-c6d7-4ca8-9bbf-5965751022c2' -UserGroups "0e55190c-73ee-e811-80e9-005056a31be6","0e55190c-73ee-e811-80e9-005056a3" -DifferentialScope 20
+```
+In this example the script will add users (members of Group '7b7c4926-c6d7-4ca8-9bbf-5965751022c2') as owners to group 0e55190c-73ee-e811-80e9-005056a31be6 and 0e55190c-73ee-e811-80e9-005056a3 with an increased scope of 20 changes.
+
+### Final Notes
 This function requires that you have already created your Azure AD Groups.
 
 We used AzureADPreview Version: 2.0.2.5 ()
