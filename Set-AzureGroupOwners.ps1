@@ -71,7 +71,7 @@ Find me on:
                         - [Feature] Added a write-output when AutomationPSCredential is using in the write-log function
 1.0.0 20190314 - JBines - [MAJOR RELEASE] Other than that it works like a dream... 
 1.0.1 20190430 - JBines - [BUGFIX] Changed the DifferentialScope to apply for each group rather than the total number of changes. Better when to apply to a number of groups. 
-1.0.2 20191001 - CGarvin - Changed variable $OwnerSourceGroup from String type to $OwnerSourceGroups of Array type for maximum flexibility.
+1.0.2 20191001 - CG     - Changed variable $OwnerSourceGroup from String type to $OwnerSourceGroups of Array type for maximum flexibility.
 1.0.3 20191021 - JBines - [BUGFIX] Added Select-Object -Unique on the $OwnerSourceGroups Array.
 
 [TO DO LIST / PRIORITY]
